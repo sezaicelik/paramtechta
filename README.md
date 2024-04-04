@@ -4,9 +4,12 @@ Technologies Covered in This Project
 # Selenium
 [Selenium](https://www.seleniumhq.org/) is for automating web applications for testing purposes.
 
-
 # TestNG
 [TestNG](https://testng.org/doc/) is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.
+
+# Page Object Models
+[POM](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/#overview): Within your web app’s UI, there are areas where your tests interact with. A Page Object only models these as objects within the test code.
+This reduces the amount of duplicated code and means that if the UI changes, the fix needs only to be applied in one place.
 
 Building and Running the Project
 ================================
