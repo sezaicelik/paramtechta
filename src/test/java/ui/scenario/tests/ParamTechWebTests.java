@@ -46,7 +46,7 @@ public class ParamTechWebTests extends BaseTest {
     }
 
     //Test Case 1
-    @Test(priority = 1, description = "Login test with wrong username and wrong password")
+    @Test(priority = 1, description = "Login test with invalid username and invalid password")
     public void invalidUserNameInvalidPasswordLoginTest() {
 
         final var CARD_NO = "1111222233334444";
@@ -114,7 +114,7 @@ public class ParamTechWebTests extends BaseTest {
 
         signUpPage
                 .typeOTPPassword(OTP_PASSWORD)
-                .otpOnaylaButton();
+                .clickOTPOnaylaButton();
 
         var otpErrorMessage = signUpPage.getOTPErrorMessage();
 

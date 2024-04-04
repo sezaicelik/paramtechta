@@ -112,7 +112,7 @@ public class SignUpPage extends BasePage {
     }
 
     @Step("Click OTP Onayla Button")
-    public SignUpPage otpOnaylaButton() {
+    public SignUpPage clickOTPOnaylaButton() {
 
         clickElement(OTP_ONAYLA_BUTTON);
         return this;

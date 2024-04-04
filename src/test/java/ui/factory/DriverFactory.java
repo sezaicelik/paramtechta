@@ -21,6 +21,7 @@ public class DriverFactory {
     private static final String INCOGNITO = "--incognito";
     private static final String CHROME = "chrome";
     private static final String FIREFOX = "firefox";
+    private static final String EDGE = "edge";
     private static final String REMOTE_URL = "http://localhost:4444/wd/hub";
 
     public static RemoteWebDriver getDriver() {
@@ -37,21 +38,31 @@ public class DriverFactory {
     @Step("Create Local Driver")
     private static RemoteWebDriver createLocalDriver(String browserName) {
 
-        var chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments(INCOGNITO);
-
-        var firefoxOptions = new FirefoxOptions();
-        //firefoxOptions.addArguments(INCOGNITO);
-
-        if (browserName.equals(CHROME)) {
-            WebDriverManager.chromedriver().setup();
-            driver.set(new ChromeDriver(chromeOptions));
-        } else if (browserName.equals(FIREFOX)) {
-            WebDriverManager.firefoxdriver().setup();
-            driver.set(new FirefoxDriver(firefoxOptions));
-        } else {
-            WebDriverManager.edgedriver().setup();
-            driver.set(new EdgeDriver());
+        switch (browserName) {
+            case CHROME:
+                ChromeOptions chromeOptions = new ChromeOptions();
+                //chromeOptions.addArguments(INCOGNITO);
+                WebDriverManager.chromedriver().setup();
+                driver.set(new ChromeDriver(chromeOptions));
+                System.out.println("***** Browser is chrome *****");
+                break;
+            case FIREFOX:
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                //firefoxOptions.addArguments(INCOGNITO);
+                WebDriverManager.firefoxdriver().setup();
+                driver.set(new FirefoxDriver(firefoxOptions));
+                System.out.println("***** Browser is firefox *****");
+                break;
+            case EDGE:
+                WebDriverManager.edgedriver().setup();
+                driver.set(new EdgeDriver());
+                System.out.println("***** Browser is edge *****");
+                break;
+            default:
+                WebDriverManager.chromedriver().setup();
+                driver.set(new ChromeDriver());
+                System.out.println("***** Browser is chrome-bonigarcia *****");
+                break;
         }
 
         driver.get().manage().window().maximize();

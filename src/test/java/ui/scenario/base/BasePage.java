@@ -112,8 +112,7 @@ public class BasePage {
      */
     protected WebElement waitUntilAppearsAndGetElement(By by) {
 
-        WebElement element = new WebDriverWait(DriverFactory.getDriver(), DEFAULT_WAIT).until(ExpectedConditions.visibilityOfElementLocated(by));
-        return element;
+        return new WebDriverWait(DriverFactory.getDriver(), DEFAULT_WAIT).until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     /**
