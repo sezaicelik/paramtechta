@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ParamTech Web Test Suite" configfailurepolicy="continue">
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="executionType" value="local"/>
+    <test name="ParamTech Web Tests">
+        <classes>
+            <class name="ui.scenario.tests.ParamTechWebTests"/>
+        </classes>
+    </test>
+</suite>

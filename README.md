@@ -42,5 +42,3 @@ There are a few things needed before you run the api.tests. Make sure you have t
 1. Install Allure on your computer
 2. Run tests
 3. Generate and open allure report with this commandline: "allure serve allure-results"
-# paramtechta
-# paramtechta
